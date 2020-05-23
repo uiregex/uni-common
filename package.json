@@ -1,0 +1,31 @@
+{
+  "name": "@uni/common",
+  "version": "0.0.3",
+  "description": "Stencil Component Starter",
+  "license": "Commercial",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/types/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/common/common.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "build:prod": "stencil build",
+    "build:dev": "stencil build --dev --watch",
+    "build:docs": "stencil build --docs",
+    "start": "stencil build --dev --watch --serve --no-open",
+    "test": "stencil test --spec --e2e",
+    "test.watch": "stencil test --spec --e2e --watchAll",
+    "generate": "stencil generate"
+  },
+  "devDependencies": {
+    "@stencil/core": "1.13.0",
+    "prettier": "1.19.1"
+  }
+}

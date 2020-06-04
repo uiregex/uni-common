@@ -1,8 +1,19 @@
 export const isDefined = (value: unknown): boolean => typeof value !== 'undefined' && value !== null;
-export const isObject = (item: unknown): boolean => isDefined(item) && typeof item === 'object' && !Array.isArray(item);
 
-export function isEmpty(item: any): boolean {
-  return (Array.isArray(item) && item.length === 0)
-    || (typeof item === 'object' && item.keys().length === 0)
-    || (typeof item === 'string' && item === '');
+export const isArray = (value: unknown): boolean => isDefined(value) && Array.isArray(value);
+
+export const isObject = (value: unknown): boolean => isDefined(value) && typeof value === 'object' && !isArray(value);
+
+export function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+export function isNumber(value: unknown): value is number {
+  return typeof value === "number";
+}
+
+export function isEmpty(value: any): boolean {
+  return (Array.isArray(value) && value.length === 0)
+    || (isObject(value) && value.keys().length === 0)
+    || (isString(value) && value === '');
 }

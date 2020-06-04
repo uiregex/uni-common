@@ -1,4 +1,6 @@
-export function getStringValue(value: any): boolean | number | string {
+import { isString } from './is';
+
+export function getStringValue(value: any): any {
   return value === 'true' || value === ''
     ? true
     : value === 'false'
@@ -7,5 +9,7 @@ export function getStringValue(value: any): boolean | number | string {
         ? parseFloat(value)
         : value === 'null'
           ? null
-          : value;
+          : isString(value) && /[{"].+[":].+["].+["}]/.test(value)
+            ? JSON.parse(value)
+            : value;
 }

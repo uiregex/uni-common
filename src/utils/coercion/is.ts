@@ -17,3 +17,7 @@ export function isEmpty(value: any): boolean {
     || (isObject(value) && value.keys().length === 0)
     || (isString(value) && value === '');
 }
+
+export function isJSON(value: any): boolean {
+  return isString(value) && /^[{]".+"[:].+".+"[}]$/g.test(value);
+}

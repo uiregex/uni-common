@@ -1,4 +1,4 @@
-import { isString } from './is';
+import { isJSON } from './is';
 
 export function getStringValue(value: any): any {
   return value === 'true' || value === ''
@@ -9,7 +9,7 @@ export function getStringValue(value: any): any {
         ? parseFloat(value)
         : value === 'null'
           ? null
-          : isString(value) && /[{"].+[":].+["].+["}]/.test(value)
+          : isJSON(value)
             ? JSON.parse(value)
             : value;
 }

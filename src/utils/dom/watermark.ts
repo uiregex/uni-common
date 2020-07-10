@@ -1,12 +1,11 @@
 import { UniBase64Regex, UniCodes, UniPackName, UniPackExclusion } from '../../models';
 
 const html = `<div style="position: absolute; z-index: 2147483647; bottom: 20px; right: 20px;">
-<span style="font-family: 'Times New Roman', Times, serif; font-size: 20px; color: #AAA;">
+<a href="https://uiwebkit.com" target="_blank"
+style="text-decoration: none; font-family: 'Times New Roman', Times, serif; font-size: 20px; color: #AAA;">
 <span>Powered by </span>
-<a href="https://uiwebkit.com" target="_blank" style="text-decoration: none">
-<img style="width: 20px; margin-bottom: -3px;" src="assets/img/logo.png" alt="UiWebKit">iWebKit
+<img style="width: 20px; margin-bottom: -3px;" src="assets/img/logo.png" alt="UiWebKit">
 </a>
-</span>
 </div>`;
 
 export function uniWatermark(type: UniPackName, exclusions?: Partial<UniPackExclusion>): void {
@@ -30,20 +29,20 @@ function isPackLicensed(type: UniPackName): boolean {
 }
 
 function hasExclusion(exclusions: Partial<UniPackExclusion>): boolean {
-  return exclusions?.packages?.some((type: UniPackName): boolean => isPackLicensed(type))
-    || hasParentPack(exclusions?.strict?.el, exclusions?.strict?.packages);
+  return (exclusions?.packages && exclusions.packages.some((type: UniPackName): boolean => isPackLicensed(type)))
+    || (exclusions?.strict && hasParentPack(exclusions.strict.el, exclusions.strict.packages));
 }
 
 function getKey(type: UniPackName): string {
-  return window['uni']?.codes?.[type];
+  return window['uni']?.codes && window['uni'].codes[type];
 }
 
 function hasParentPack(el: HTMLElement | ShadowRoot, types: UniPackName[]): boolean {
-  return types?.some((type: UniPackName): boolean =>
+  return types && types.some((type: UniPackName): boolean =>
     isPackLicensed(type) && isPackType(el.parentElement, type)
   );
 }
 
 function isPackType(el: HTMLElement | ShadowRoot, type: UniPackName): boolean {
-  return el?.['package'] === type || (el.parentElement && isPackType(el.parentElement, type));
+  return el['package'] === type || (el.parentElement && isPackType(el.parentElement, type));
 }

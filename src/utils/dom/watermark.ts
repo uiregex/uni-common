@@ -1,12 +1,6 @@
 import { UniBase64Regex, UniCodes, UniPackName, UniPackExclusion } from '../../models';
 
-const html = `<div style="position: absolute; z-index: 2147483647; bottom: 20px; right: 20px;">
-<a href="https://uiwebkit.com" target="_blank"
-style="text-decoration: none; font-family: 'Times New Roman', Times, serif; font-size: 20px; color: #AAA;">
-<span>Powered by </span>
-<img style="width: 20px; margin-bottom: -3px;" src="assets/img/logo.png" alt="UiWebKit">
-</a>
-</div>`;
+const html = `<div style="position: absolute; z-index: 2147483647; bottom: 20px; right: 20px;"><a href="https://uiwebkit.com" target="_blank" style="text-decoration: none; font-family: 'Times New Roman', Times, serif; font-size: 20px; color: #AAA;"><span>Powered by </span><img style="width: 20px; margin-bottom: -3px;" src="assets/img/logo.png" alt="UiWebKit"></a></div>`;
 
 export function uniWatermark(type: UniPackName, exclusions?: Partial<UniPackExclusion>): void {
   if (!isSameElement() && !isLicensed(type, exclusions)) {

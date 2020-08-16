@@ -1,6 +1,6 @@
 {
   "name": "@uni/common",
-  "version": "0.0.18",
+  "version": "0.0.23",
   "description": "Stencil Component Starter",
   "license": "Commercial",
   "main": "dist/index.js",

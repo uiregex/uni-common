@@ -1,6 +1,6 @@
 import { getUniCodes } from '../functions/get-codes';
 
-const html = `<div style="position: absolute; z-index: 2147483647; bottom: 20px; right: 20px;">
+const html = `<div style="position: fixed; z-index: 2147483647; bottom: 20px; right: 20px;">
 <a href="https://uiwebkit.com" target="_blank" style="text-decoration: none; font-family: 'Times New Roman', Times, serif; font-size: 20px; color: #AAA;">
 <span>Powered by </span>
 <svg style="width: 20px; margin-bottom: -3px;" xmlns="http://www.w3.org/2000/svg" viewBox="309 198 110 119" width="24" height="24">

@@ -4,7 +4,7 @@ export * from './coercion/is';
 export * from './coercion/string-value';
 
 export * from './dom/get-element-index';
-export * from './dom/get-first-child-url';
+export * from './dom/get-target-attribute';
 export * from './dom/handle-class';
 export * from './dom/watermark';
 

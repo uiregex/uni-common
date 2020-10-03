@@ -15,14 +15,14 @@ const html = `<div style="position: fixed; z-index: 2147483647; bottom: 20px; ri
 export function uniWatermark(key: string, value: string): void {
   setTimeout(function() {
     if (!isLicensed(key, value) && !hasSameElement()) {
-      document.body.insertAdjacentHTML('beforeend', html);
+      window.top.document.body.insertAdjacentHTML('beforeend', html);
       uniDebugCodes(key);
     }
   }, 1000);
 }
 
 function hasSameElement(): boolean {
-  const children = Array.from(document.body.children);
+  const children = Array.from(window.top.document.body.children);
 
   return children[children.length - 1].outerHTML === html;
 }
@@ -38,5 +38,3 @@ function uniDebugCodes(key: string): void {
     console.log(key);
   }
 }
-
-

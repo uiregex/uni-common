@@ -14,7 +14,7 @@ export function isNumber(value: unknown): value is number {
 
 export function isEmpty(value: any): boolean {
   return (Array.isArray(value) && value.length === 0)
-    || (isObject(value) && value.keys().length === 0)
+    || (isObject(value) && Object.keys(value).length === 0)
     || (isString(value) && value === '');
 }
 

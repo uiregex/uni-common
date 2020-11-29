@@ -1,7 +1,7 @@
 {
   "name": "@uni/common",
-  "version": "0.0.28",
-  "description": "Stencil Component Starter",
+  "version": "0.0.29",
+  "description": "Uni Commons",
   "license": "Commercial",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
@@ -17,16 +17,15 @@
     "loader/"
   ],
   "scripts": {
-    "build:prod": "stencil build",
     "build:dev": "stencil build --dev --watch",
-    "build:docs": "stencil build --docs",
+    "build:prod": "stencil build",
     "start": "stencil build --dev --watch --serve --no-open",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "pack": "npm pack"
   },
   "devDependencies": {
-    "@stencil/core": "2.0.3",
-    "prettier": "1.19.1"
+    "@stencil/core": "2.3.0"
   }
 }

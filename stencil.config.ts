@@ -2,17 +2,27 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'common',
+  buildEs5: 'prod',
+  enableCache: false,
   taskQueue: 'async',
-  buildEs5: false,
   extras: {
-    cssVarsShim: false,
-    dynamicImportShim: false,
-    safari10: false,
-    scriptDataOpts: false,
-    shadowDomShim: false,
-    slotChildNodesFix: true,
     appendChildSlotFix: true,
-    cloneNodeFix: true
+    cloneNodeFix: true,
+    cssVarsShim: true,
+    dynamicImportShim: true,
+    safari10: true,
+    scriptDataOpts: false,
+    shadowDomShim: true,
+    initializeNextTick: true,
+    slotChildNodesFix: true,
+    tagNameTransform: true,
+  },
+  hydratedFlag: {
+    name: `hydrated`,
+    selector: 'class',
+    property: `visibility`,
+    initialValue: `hidden`,
+    hydratedValue: `inherit`,
   },
   outputTargets: [
     {
@@ -21,7 +31,14 @@ export const config: Config = {
       empty: true
     },
     {
-      type: 'docs-readme'
+      type: 'dist-custom-elements-bundle',
+      empty: true,
+    },
+    {
+      type: 'docs-readme',
+      footer: '*Powered by [UiWebKit](https://uiwebkit.com/)*',
+      dependencies: true,
+      // strict: true,
     },
     {
       type: 'www',

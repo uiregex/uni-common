@@ -30,10 +30,10 @@ export const config: Config = {
       esmLoaderPath: '../loader',
       empty: true
     },
-    {
-      type: 'dist-custom-elements-bundle',
-      empty: true,
-    },
+    // {
+    //   type: 'dist-custom-elements-bundle',
+    //   empty: true,
+    // },
     {
       type: 'docs-readme',
       footer: '*Powered by [UiWebKit](https://uiwebkit.com/)*',

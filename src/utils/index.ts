@@ -3,6 +3,7 @@ export * from './classes/color.classes';
 export * from './coercion/is';
 export * from './coercion/string-value';
 
+export * from './dom/get-any-elements';
 export * from './dom/get-element-index';
 export * from './dom/get-target-attribute';
 export * from './dom/handle-class';

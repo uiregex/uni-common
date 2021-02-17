@@ -11,3 +11,4 @@ export * from './types/color.type';
 export * from './types/css-classes.type';
 export * from './types/fetch-options.type';
 export * from './types/response.type';
+export * from './types/size.type';

@@ -1,6 +1,6 @@
 export const UniColorClasses = {
   primary: 'uni-color-primary',
-  secondary: 'uni-color-secondary',
+  success: 'uni-color-success',
   accent: 'uni-color-accent',
   warn: 'uni-color-warn'
 };

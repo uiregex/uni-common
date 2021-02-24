@@ -19,5 +19,5 @@ export function isEmpty(value: any): boolean {
 }
 
 export function isJSON(value: any): boolean {
-  return isString(value) && (/^[{]".+"[:].+".+"[}]$/g.test(value) || /^[\[]".+"[\]]$/g.test(value));
+  return isString(value) && (/^[{]".+"[:].+".+"[}]$/g.test(value) || /^.[{]".+"[:].+".+"[}].$/g.test(value));
 }

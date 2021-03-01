@@ -19,5 +19,10 @@ export function isEmpty(value: any): boolean {
 }
 
 export function isJSON(value: any): boolean {
-  return isString(value) && (/^[{]".+"[:].*".+"[}]$/g.test(value) || /^[\[][{]".+"[:].*".+"[}][\]]$/g.test(value));
+  const optional = `(".+"[:].+)?`;
+  const regexObject = new RegExp(`^[{]${optional}[}]$`, 'g');
+  const regexArray = new RegExp(`^[\\[]${optional}[\\]]$`, 'g');
+  const regexArrayObject = new RegExp(`^[\\[][{]${optional}[}][\\]]$`, 'g');
+
+  return isString(value) && (regexObject.test(value) || regexArray.test(value) || regexArrayObject.test(value));
 }

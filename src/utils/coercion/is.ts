@@ -4,13 +4,9 @@ export const isArray = (value: unknown): boolean => isDefined(value) && Array.is
 
 export const isObject = (value: unknown): boolean => isDefined(value) && typeof value === 'object' && !isArray(value);
 
-export function isString(value: unknown): value is string {
-  return typeof value === 'string';
-}
+export const isString = (value: unknown): value is string => typeof value === 'string';
 
-export function isNumber(value: unknown): value is number {
-  return typeof value === "number";
-}
+export const isNumber = (value: unknown): value is number => typeof value === "number";
 
 export function isEmpty(value: any): boolean {
   return (Array.isArray(value) && value.length === 0)

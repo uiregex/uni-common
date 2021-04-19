@@ -1,3 +1,3 @@
-import { FunctionalComponent } from '@stencil/core';
+// import { FunctionalComponent } from '@stencil/core';
 
-export const Fragment: FunctionalComponent = (_props, children) => [...children];
+// export const Fragment: FunctionalComponent = (_props, children) => [...children];

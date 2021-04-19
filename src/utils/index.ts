@@ -12,7 +12,7 @@ export * from './dom/handle-class';
 export * from './dom/watermark';
 
 export * from './functions/fetch';
-export * from './functions/fragment';
+// export * from './functions/fragment';
 export * from './functions/get-codes';
 export * from './functions/load';
 

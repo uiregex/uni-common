@@ -1,6 +1,6 @@
 import { isArray, isJSON, isObject } from './is';
 
-export function getStringValue(value: any): any {
+export function uniValue(value: any): any {
   return value === 'true' ? true
     : value === 'false' ? false
       : value === 'null' ? null

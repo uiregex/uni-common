@@ -2,10 +2,10 @@ export function uniGetTargetElements(el: HTMLElement, all?: boolean, selector?: 
   const elements = all
     ? selector
       ? el.querySelectorAll(selector)
-      : el.children
+      : el.children || []
     : selector
-      ? [el.querySelector(selector)]
-      : [el.firstElementChild];
+      ? el.querySelector(selector) ? [el.querySelector(selector)] : []
+      : el.firstElementChild ? [el.firstElementChild] : [];
 
   if (!elements || !elements[0]) {
     console.error('No Element target: ' + selector);

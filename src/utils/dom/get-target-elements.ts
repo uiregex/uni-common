@@ -1,4 +1,4 @@
-export function uniGetTargetElements(el: HTMLElement, all?: boolean, selector?: string): Element[] {
+export function uniGetTargetElements(el: HTMLElement | ShadowRoot, all?: boolean, selector?: string): Element[] {
   const elements = all
     ? selector
       ? el.querySelectorAll(selector)

@@ -1,6 +1,6 @@
 {
   "name": "@uni/common",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "Uni Commons",
   "license": "Commercial",
   "main": "dist/index.cjs.js",

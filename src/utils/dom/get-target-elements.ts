@@ -1,5 +1,4 @@
-export function uniGetTargetElements(el: HTMLElement, all?: boolean, selector?: string)
-  : NodeListOf<Element> | HTMLCollection | Element[] {
+export function uniGetTargetElements(el: HTMLElement, all?: boolean, selector?: string): Element[] {
   const elements = all
     ? selector
       ? el.querySelectorAll(selector)
@@ -13,5 +12,5 @@ export function uniGetTargetElements(el: HTMLElement, all?: boolean, selector?: 
     console.warn('For Element', el);
   }
 
-  return elements;
+  return Array.from(elements);
 }

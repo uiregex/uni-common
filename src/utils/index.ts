@@ -9,6 +9,8 @@ export * from './dom/get-element-index';
 export * from './dom/get-target-attribute';
 export * from './dom/get-target-elements';
 export * from './dom/handle-class';
+export * from './dom/handle-classes';
+export * from './dom/handle-target-classes';
 export * from './dom/watermark';
 
 export * from './functions/fetch';

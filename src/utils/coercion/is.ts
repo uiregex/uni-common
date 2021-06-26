@@ -6,7 +6,9 @@ export const isObject = (value: unknown): boolean => typeof value === 'object' &
 
 export const isString = (value: unknown): value is string => typeof value === 'string';
 
-export const isNumber = (value: unknown): value is number => typeof value === "number";
+export const isNumber = (value: unknown): value is number => typeof value === 'number';
+
+// export const isBoolean = (value: unknown): value is boolean => typeof value === 'boolean';
 
 export function isEmpty(value: any): boolean {
   return isDefined(value) && (
@@ -30,18 +32,18 @@ export function isBind(value: any, start = '{{', end = '}}'): boolean {
   return isString(value) && value.includes(start) && value.includes(end);
 }
 
-export function isBinding(value, start = '{{', end = '}}'): boolean {
-  return isDefined(value) && isBind(value, start, end);
-}
+// export function isBinding(value, start = '{{', end = '}}'): boolean {
+//   return isDefined(value) && isBind(value, start, end);
+// }
 
-export function isNotBinding(value, start = '{{', end = '}}'): boolean {
-  return isDefined(value) && !isBind(value, start, end);
-}
+// export function isNotBinding(value, start = '{{', end = '}}'): boolean {
+//   return isDefined(value) && !isBind(value, start, end);
+// }
 
-export function isCleanNotBinding(value, start = '{{', end = '}}'): boolean {
-  return !isDefined(value) || !isBind(value, start, end);
-}
+// export function isCleanNotBinding(value, start = '{{', end = '}}'): boolean {
+//   return !isDefined(value) || !isBind(value, start, end);
+// }
 
-export function isCleanNotBindings(values, start = '{{', end = '}}'): boolean {
-  return values.every((value) => isCleanNotBinding(value, start, end));
-}
+// export function isCleanNotBindings(values, start = '{{', end = '}}'): boolean {
+//   return values.every((value) => isCleanNotBinding(value, start, end));
+// }

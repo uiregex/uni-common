@@ -1,19 +1,20 @@
 interface UniGetAnyElements {
-  selector: string;
+  top?: boolean;
   shadow?: boolean;
   frame?: boolean;
+  selector: string;
 }
 
 export function uniGetAnyElements(data: UniGetAnyElements): Element[] {
-  const { selector, shadow, frame } = data;
-  const elements = Array.from(window.top.document.body.querySelectorAll(selector) || []);
+  const { top, shadow, frame, selector } = data;
+  const elements = Array.from((top ? window.top : window).document.body.querySelectorAll(selector) || []);
 
   if (shadow) {
-    elements.push(...getShadowInnerElements(window.top.document.body.getElementsByTagName('*'), selector));
+    elements.push(...getShadowInnerElements((top ? window.top : window).document.body.getElementsByTagName('*'), selector));
   }
 
   if (frame) {
-    Array.from(window.top.document.body.querySelectorAll('iframe') || [])
+    Array.from((top ? window.top : window).document.body.querySelectorAll('iframe') || [])
       .forEach((frame: HTMLIFrameElement): void => {
         elements.push(...Array.from(frame.contentDocument?.body?.querySelectorAll(selector) || []));
 

@@ -1,5 +1,3 @@
-import { getUniCodes } from '../functions/get-codes';
-
 const html = `<div style="position: fixed; z-index: 2147483647; bottom: 20px; right: 20px;">
 <a href="https://uiwebkit.com" target="_blank" style="text-decoration: none; font-family: 'Times New Roman', Times, serif; font-size: 20px; color: #AAA;">
 <span>Powered by </span>
@@ -12,11 +10,10 @@ const html = `<div style="position: fixed; z-index: 2147483647; bottom: 20px; ri
 </a>
 </div>`;
 
-export function uniWatermark(key: string, value: string): void {
+export function uniWatermark(key: string): void {
   setTimeout(function() {
-    if (!isLicensed(key, value) && !hasSameElement()) {
+    if (!isLicensed(key) && !hasSameElement()) {
       window.top.document.body.insertAdjacentHTML('beforeend', html);
-      uniDebugCodes(key);
     }
   }, 1000);
 }
@@ -27,14 +24,19 @@ function hasSameElement(): boolean {
   return children[children.length - 1].outerHTML === html;
 }
 
-function isLicensed(key: string, value: string): boolean {
-  return getUniCodes()[key] === btoa(value);
-}
+function isLicensed(key: string): boolean {
+  const license = localStorage.getItem(`uni.license.${key}`);
 
-function uniDebugCodes(key: string): void {
-  const debug = sessionStorage.getItem('uni.debug') || localStorage.getItem('uni.debug');
+  if (license) {
+    let str = atob(license);
 
-  if (debug && JSON.parse(debug).codes) {
-    console.log(key);
+    ['u', 'i', 'w', 'e', 'b', 'k', 't'].forEach((key: string) => {
+      str = str.replace(key, '');
+    });
+
+    const location = str.replace(str.slice(-3), '');
+    const pack = str.slice(-3).split('').reverse().join('');
+
+    return location === window.location.hostname && pack == key;
   }
 }

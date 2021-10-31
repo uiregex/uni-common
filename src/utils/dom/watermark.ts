@@ -28,7 +28,13 @@ function isLicensed(key: string): boolean {
   const license = localStorage.getItem(`uni.license.${key}`);
 
   if (license) {
-    let str = atob(license);
+    let str = '';
+
+    try {
+      str = atob(license);
+    } catch (e) {
+      str = '';
+    }
 
     ['u', 'i', 'w', 'e', 'b', 'k', 't'].forEach((key: string) => {
       str = str.replace(key, '');

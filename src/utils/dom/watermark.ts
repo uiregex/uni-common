@@ -36,9 +36,10 @@ function isLicensed(key: string): boolean {
       str = '';
     }
 
-    ['u', 'i', 'w', 'e', 'b', 'k', 't'].forEach((key: string) => {
-      str = str.replace(key, '');
-    });
+    str = str
+      .split('')
+      .filter((key, index) => index !== 0 && index !== 2 && index !== 4 ? key : '')
+      .join('');
 
     const location = str.replace(str.slice(-3), '');
     const pack = str.slice(-3).split('').reverse().join('');

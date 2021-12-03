@@ -1,8 +1,8 @@
 {
-  "name": "@uni/common",
+  "name": "@uiwebkit/common",
   "version": "0.1.0",
   "description": "Uni Commons",
-  "license": "Commercial",
+  "license": "MIT",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.js",
@@ -11,7 +11,8 @@
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/common/common.js",
+  "unpkg": "dist/common/common.esm.js",
+  "jsdelivr": "dist/common/common.esm.js",
   "files": [
     "dist/",
     "loader/"
@@ -23,10 +24,22 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "pack": "npm pack"
+    "pack": "npm pack",
+    "publish": "npm publish uiwebkit-common-0.1.0.tgz --access public"
+  },
+  "dependencies": {
+    "@stencil/core": "2.11.0"
   },
   "devDependencies": {
-    "@stencil/core": "2.11.0",
     "prettier": "2.5.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwebkit/common.git"
   }
 }

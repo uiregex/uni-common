@@ -4,6 +4,7 @@ loader/
 
 *~
 uni-*.tgz
+uiwebkit-*.tgz
 *.sw[mnpcod]
 *.log
 *.lock

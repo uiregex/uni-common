@@ -1,6 +1,7 @@
-import { UniColorClasses, UniObject } from '../../models';
+import { UniObject } from '../../models';
+import { UniColorClasses } from '../states/colors.state';
 
-export function uniColorClass(color: string): UniObject<boolean> {
+export function uniGetColorClass(color: string): UniObject<boolean> {
   return {
     [UniColorClasses.primary]: color === 'primary',
     [UniColorClasses.success]: color === 'success',

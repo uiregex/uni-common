@@ -8,7 +8,11 @@ export const isString = (value: unknown): value is string => typeof value === 's
 
 export const isNumber = (value: unknown): value is number => typeof value === 'number';
 
-// export const isBoolean = (value: unknown): value is boolean => typeof value === 'boolean';
+export const isBoolean = (value: unknown): value is boolean => typeof value === 'boolean';
+
+export function isEmptyString(value: any): boolean {
+  return isDefined(value) && (isString(value) && value === '');
+}
 
 export function isEmpty(value: any): boolean {
   return isDefined(value) && (

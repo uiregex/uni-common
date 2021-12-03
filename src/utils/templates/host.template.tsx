@@ -1,7 +1,7 @@
 import { h, Host, VNode } from '@stencil/core';
 
 import { UniFunctionalHostTemplate } from '../../models';
-import { UniTemplate } from './children.template';
+import { UniTemplate } from './template';
 
 export const UniHostTemplate: UniFunctionalHostTemplate =
   function({ props, classes }, template?): VNode {

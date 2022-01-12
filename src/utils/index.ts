@@ -1,5 +1,6 @@
-export * from './coercion/is';
 export * from './coercion/get-value';
+export * from './coercion/is';
+export * from './coercion/number';
 
 export * from './dom/add-class';
 export * from './dom/add-prop';

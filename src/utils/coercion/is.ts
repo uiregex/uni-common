@@ -6,8 +6,6 @@ export const isObject = (value: unknown): boolean => typeof value === 'object' &
 
 export const isString = (value: unknown): value is string => typeof value === 'string';
 
-export const isNumber = (value: unknown): value is number => typeof value === 'number';
-
 export const isBoolean = (value: unknown): value is boolean => typeof value === 'boolean';
 
 export function isEmptyString(value: any): boolean {
@@ -35,6 +33,7 @@ export function isJSON(value: any): boolean {
 export function isBind(value: any, start = '{{', end = '}}'): boolean {
   return isString(value) && value.includes(start) && value.includes(end);
 }
+
 
 // export function isBinding(value, start = '{{', end = '}}'): boolean {
 //   return isDefined(value) && isBind(value, start, end);

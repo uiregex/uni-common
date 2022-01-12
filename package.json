@@ -1,6 +1,6 @@
 {
   "name": "@uiwebkit/common",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Uni Commons",
   "license": "MIT",
   "main": "dist/index.cjs.js",
@@ -25,7 +25,7 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "pack": "npm pack",
-    "publish": "npm publish uiwebkit-common-0.1.0.tgz --access public"
+    "publish": "npm publish uiwebkit-common-0.1.1.tgz --access public"
   },
   "dependencies": {
     "@stencil/core": "2.11.0"

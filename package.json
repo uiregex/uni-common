@@ -1,6 +1,6 @@
 {
   "name": "@uiwebkit/common",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Uni Commons",
   "license": "MIT",
   "main": "dist/index.cjs.js",
@@ -13,10 +13,7 @@
   "collection:main": "dist/collection/index.js",
   "unpkg": "dist/common/common.esm.js",
   "jsdelivr": "dist/common/common.esm.js",
-  "files": [
-    "dist/",
-    "loader/"
-  ],
+  "files": ["dist/"],
   "scripts": {
     "build:dev": "stencil build --dev --watch",
     "build:prod": "stencil build",
@@ -25,13 +22,13 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "pack": "npm pack",
-    "publish": "npm publish uiwebkit-common-0.1.1.tgz --access public"
+    "publish": "npm publish uiwebkit-common-0.1.2.tgz --access public"
   },
   "dependencies": {
-    "@stencil/core": "2.11.0"
+    "@stencil/core": "2.13.0"
   },
   "devDependencies": {
-    "prettier": "2.5.0"
+    "prettier": "2.5.1"
   },
   "browserslist": [
     "> 1%",

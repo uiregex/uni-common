@@ -2,7 +2,6 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'common',
-  buildEs5: 'prod',
   enableCache: false,
   taskQueue: 'async',
   extras: {
@@ -27,7 +26,6 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'dist',
-      esmLoaderPath: '../loader',
       empty: true
     },
     {

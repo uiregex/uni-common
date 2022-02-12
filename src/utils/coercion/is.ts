@@ -1,4 +1,6 @@
-export const isDefined = (value: unknown): boolean => typeof value !== 'undefined'; // && value !== null;
+export const isDefined = (value: unknown): boolean => typeof value !== 'undefined';
+
+export const isNull = (value: unknown): boolean => value === null;
 
 export const isArray = (value: unknown): boolean => Array.isArray(value);
 
@@ -17,7 +19,7 @@ export function isEmpty(value: any): boolean {
     (isArray(value) && value.length === 0)
     || (isObject(value) && Object.keys(value).length === 0)
     || (isString(value) && value === '')
-    || value === null
+    || isNull(value)
   );
 }
 

@@ -5,9 +5,10 @@ export function uniGetValue(value: any): any {
   return value === 'true' ? true
     : value === 'false' ? false
       : value === 'null' ? null
-        : isNumberValue(value) ? Number(value)
-          : isJSON(value) ? JSON.parse(value)
-            : isObject(value) ? { ...value }
-              : isArray(value) ? [...value]
-                : value;
+        : value === 'undefined' ? undefined
+          : isNumberValue(value) ? Number(value)
+            : isJSON(value) ? JSON.parse(value)
+              : isObject(value) ? { ...value }
+                : isArray(value) ? [...value]
+                  : value;
 }

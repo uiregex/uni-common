@@ -24,12 +24,13 @@ export function isEmpty(value: any): boolean {
 }
 
 export function isJSON(value: any): boolean {
-  const optional = `(?:".+"[:].+)?`;
-  const regexArray = new RegExp(`^[\\[].*[\\]]$`, 'g');
-  const regexObject = new RegExp(`^[{]${optional}[}]$`, 'g');
-  const regexArrayObject = new RegExp(`^[\\[][{]${optional}[}][\\]]$`, 'g');
+  try {
+    JSON.parse(value);
+  } catch (e) {
+    return false;
+  }
 
-  return isString(value) && (regexObject.test(value) || regexArray.test(value) || regexArrayObject.test(value));
+  return isString(value);
 }
 
 export function isBind(value: any, start = '{{', end = '}}'): boolean {

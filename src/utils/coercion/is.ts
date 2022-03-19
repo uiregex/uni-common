@@ -1,3 +1,5 @@
+import { uniGetValue } from './get-value';
+
 export const isDefined = (value: unknown): boolean => typeof value !== 'undefined';
 
 export const isNull = (value: unknown): boolean => value === null;
@@ -33,10 +35,28 @@ export function isJSON(value: any): boolean {
   return isString(value);
 }
 
+export function isNestedData(value: any): boolean {
+  return isArray(value) || isObject(value);
+}
+
+export function uniIsEqual(state: any, value: any): boolean {
+  return isNestedData(state)
+    ? JSON.stringify(state) === (isNestedData(value) ? JSON.stringify(value) : value)
+    : uniGetValue(state) === uniGetValue(value);
+}
+
+export function uniStringifyEqual(value: string, equal: any): boolean {
+  return isNestedData(value) ? JSON.stringify(value) === equal : value === uniGetValue(equal);
+}
+
+export function uniStringifyNoEqual(value: any, noEqual: string): boolean {
+  return isNestedData(value) ? JSON.stringify(value) !== noEqual : value !== uniGetValue(noEqual);
+}
+
+
 export function isBind(value: any, start = '{{', end = '}}'): boolean {
   return isString(value) && value.includes(start) && value.includes(end);
 }
-
 
 // export function isBinding(value, start = '{{', end = '}}'): boolean {
 //   return isDefined(value) && isBind(value, start, end);
